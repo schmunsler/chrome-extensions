@@ -1,0 +1,144 @@
+/* Fix new G+ layout */
+    
+    /* Left align streams */
+    div[guidedhelpid="streamcontent"] {
+        margin: 0 !important; 
+    }
+    
+    /* Move refresh button */
+    div.tke.oDc > div[role="button"] {
+        position: fixed !important;
+        top: 125px;
+        left: 730px;
+    }
+    
+    /* Make posts and share box wider */
+    div.ona.Fdb.csa, div.Ypa.jw.Ic.am {
+        width: 700px !important;
+    }
+    div[guidedhelpid="sharebox_launcher"] > div, div.iqa.Sb.hd {
+        max-width: 700px !important;
+        margin: 0 !important;
+    }
+    div.iqa.Sb.hd {
+        left: 0px !important;
+        width: 640px !important;
+    }
+    div[guidedhelpid="sharebox"] > div > div {
+        width: 640px !important;
+    }
+    div[guidedhelpid="shareboxcontrols"] {
+        width: 680px !important;
+        max-width: 680px !important;
+    }
+    div.URaP8 {
+        max-width: none !important;
+    }
+    
+    
+    /* embiggen post text */
+    h3.zi {
+        font-size: 24px !important;
+    } /* Poster name */
+    div.Bt.Pm {
+        max-height: none !important;
+        font-size: 16px !important;
+    } /* Main Post text + disables post folding */
+    span.d-s.Yv.on.gj[role="button"] {
+        display: none !important;
+    } /* Hide "Read More" since above max-height declaration kills post folding */
+    img.Uk.wi.hE {
+        width: 80px !important;
+        height: 80px !important;
+        margin-top: 10px !important;
+    } /* Bigger post avatars */
+    
+    
+    /* Bigger link headlines */
+    a.d-s.ot-anchor.zg {
+        font-size: 24px !important;
+    }
+    /* Full size link previews */
+    div.sp.ej.xI.A8Hhid {
+        width: 686px !important;
+        max-height: none !important;
+    }
+    
+    /* embiggen comments */
+    /* allow avatars to be bigger. Don't forget the userscript for higher res or you'll lose quality. */
+    img.go.wi.Wh { /* image */
+        width: 48px !important;
+        height: 48px !important;
+        margin-left: -58px !important;
+    }
+    div.Wi.lg { /* containing div */
+        padding-left: 78px !important;
+    }
+    a.tv.Ub.TD { /* Bigger commenter name */
+        font-size: 16px !important;
+    }
+    div.gA { /* comment text */
+        font-size: 16px !important;
+        max-height: none !important;
+    }
+    /* Comment input text */
+    div.editable[role="textbox"] {
+        font-size: 16px !important;
+    }
+    
+    /* embiggen single pics and video previews */
+    div.q9.yg > div.sp.ej.xI.Zo, 
+    div.q9.yg > div.sp.ej.bc.Ai {
+        width: 686px !important;
+        /* userscript sets height */
+        max-height: none !important;
+    }
+    img.ar.Mc {
+        max-width: none !important;
+        max-height: none !important;
+    }
+    
+    /* Allow pics in multipic posts to be bigger. Requires userscript to resize actual pictures. */
+    /* 2 pics: each = (1/2 width)^2, width = 686 */
+    div.sp.ej.Yw {
+        width: 343px !important;
+        height: 343px !important;
+    }
+    /* 3 pics: Smaller pics = (1/3 width)^2, larger pic = (2/3 width)^2, width = 686 */
+    div.mQMHtc { 
+        height: 456px !important;
+    } /* Total height = height of larger pic */
+    div.sp.ej[style="width:337px;height:337px;"] {
+        width: 456px !important;
+        height: 456px !important;
+    }
+    div.sp.ej.rU {
+        height: 228px !important;
+        width: 228px !important;
+    }
+    /* 4 pics: Smaller pics = (1/4 width)^2, larger pic = (3/4 width)^2, width = 686 */
+    div.sp.ej[style="width:379px;height:379px;"] {
+        width: 513px !important;
+        height: 513px !important;
+    }
+    div.sp.ej.rU[style="width:126px;height:126px;"],
+    div.sp.ej.rU[style="width:126px;height:125px;"] {
+        width: 171px !important;
+        height: 171px !important;
+    }
+    
+    
+    /* Fix communities */
+    div.zbb { 
+        margin: 0 !important;
+        display: block !important;
+    } /* left align, allow banner to float */
+    div.LVd {
+        float: right !important;
+    } /* move banner to right */
+    
+    div.F4 {
+        display: none;
+    }
+    
+    

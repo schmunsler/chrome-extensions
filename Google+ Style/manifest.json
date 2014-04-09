@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Google+ Style",
+  "version": "1.0",
+  "icons": { 
+    "48": "icon-48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://plus.google.com/*"],
+      "css": ["style.css"],
+      "all_frames": true
+    },
+    {
+        "matches": ["*://plus.google.com/*"],
+        "js": ["script.js"]
+    }
+  ]
+
+}
