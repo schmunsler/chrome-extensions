@@ -1,17 +1,18 @@
 // This function increases the natural resolution of images on Google+ so that they won't lose quality when resized in css.
-function big() {
+function big(event) {
+    target=event.target;
     // Increase post avatar resolutions
-    var avatars = document.getElementsByClassName('Uk wi hE');
+    var avatars = target.getElementsByClassName('Uk wi hE');
     for(i=0; i<avatars.length; i++) {
         avatars[i].src = avatars[i].src.replace(/s46/, "s80");
     }
     // Increase comment avatar resolutions
-    var commentavatars = document.getElementsByClassName('go wi Wh');
+    var commentavatars = target.getElementsByClassName('go wi Wh');
     for (i=0; i<commentavatars.length; i++) {
         commentavatars[i].src = commentavatars[i].src.replace(/s28-/, "s48-");
     }
     // Increase posted image resolutions
-    var postimages = document.getElementsByClassName('ar Mc');
+    var postimages = target.getElementsByClassName('ar Mc');
     for(i=0; i<postimages.length; i++) {
         if (postimages[i].className == "ar Mc bc kf") { // Video
             // have to specify height. 16:9
@@ -37,21 +38,20 @@ function big() {
         }
     }
     // Increase container size for single image posts & link previews
-    var imagecontainers = document.getElementsByClassName('sp ej xI');
+    var imagecontainers = target.getElementsByClassName('sp ej xI');
     for (i=0; i<imagecontainers.length; i++) {
         var image = imagecontainers[i].firstElementChild.firstElementChild;
-        var height = image.naturalHeight;
-        if (height > 0) {
-            //sometimes returns 0, but not the first time, so just ignore it
-            imagecontainers[i].style.height = "" + height + "px";
+        image.onload=function() {
+            this.parentNode.parentNode.style.height="" + this.naturalHeight + "px";
         }
     }
     
 }
 
 window.addEventListener('load', big, false);
-document.getElementById('contentPane').addEventListener('DOMNodeInserted', big, false);
-
+stream=document.getElementsByClassName("Ypa jw Ic am")[0];
+//document.getElementById('contentPane').addEventListener('DOMNodeInserted', big, false);
+stream.addEventListener('DOMNodeInserted', big, false);
 
 // This next part will animate avatars if they're animated gifs
 
