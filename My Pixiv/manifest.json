@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "My Pixiv",
+  "version": "1.0",
+  "icons": {
+    "48": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.pixiv.net/*"],
+      "css": ["style.css"],
+      "all_frames": true
+    },
+    {
+        "matches": ["*://www.pixiv.net/*"],
+        "js": ["script.js"]
+    }
+  ]
+
+}
