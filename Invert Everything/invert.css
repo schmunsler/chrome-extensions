@@ -1,0 +1,87 @@
+html, img, iframe, embed, object, canvas, video {
+    -webkit-filter: invert();
+}
+
+object > object, object > embed {
+    -webkit-filter: none !important;
+}
+
+/* new tab page */
+html[manifest="/_/chrome/newtab/manifest?espv=2&ie=UTF-8"], 
+html[manifest="/_/chrome/newtab/manifest?espv=2&ie=UTF-8"] img
+{
+    -webkit-filter: none !important;
+}
+
+/* twitch */
+span.emoticon, span.subscriber, #left_col {
+    -webkit-filter: invert();
+}
+
+/* hangouts */
+span[data-emo] {
+    -webkit-filter: invert();
+}
+
+/* pixiv */
+div.image[style], span.u-icon[style] {
+    -webkit-filter: invert();
+}
+
+/* Make the G+ lightbox dark again when inverted */
+div.pg  { /* main background */
+        background-color: #fff !important;
+}
+div.J5a [role="button"], div.PGb, div.qab, div.RGb, div.cra { /* buttons */
+    -webkit-filter: invert();
+}
+    
+/* fix tex images on wikipedia */
+img.tex {
+    -webkit-filter: none !important;
+}
+
+/* chrome://extensions */
+div.extension-list-item, div.extension-list-item > * {
+    -webkit-filter: invert();
+}
+
+/* chrome://history */
+div.visit-entry, div.visit-entry > * {
+    -webkit-filter: invert();
+}
+
+/* chrome://apps */
+/* HACK Normally I'd just include chrome://apps in the content script's exclude_matches, but chrome doesn't recognize its own urls as valid */
+html[bookmarkbarattached], html[bookmarkbarattached] * {
+    -webkit-filter: none !important;
+}
+
+html[bookmarkbarattached] #footer, html[bookmarkbarattached] > body > #footer > #footer-content > #logo-img > img, #chrome-web-store-title {
+    -webkit-filter: invert() !important;
+}
+
+/* youtube */ 
+div#movie_player.html5-video-player > div.html5-video-controls {
+    -webkit-filter: invert();
+}
+div#movie_player.html5-video-player, div.html5-video-container {    
+    background-color: #f1f1f1 !important;
+}
+div.html5-endscreen {
+    -webkit-filter: invert();
+}
+
+/* TEMPORARY Google tranlsate */
+canvas.ita-hwt-canvas {
+        cursor: default !important;
+    }
+    
+/* hangouts test *
+span[data-emo] > span {
+    width: auto !important;
+    opacity: 1.0 !important;
+}
+span[data-emo] > div {
+    display: none !important;
+}
